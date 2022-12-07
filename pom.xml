@@ -5,17 +5,17 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.0.0</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<version>2.7.6</version>
+		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>edu.jong</groupId>
 	<artifactId>spring-discovery-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>spring-discovery-service</name>
 	<description>Spring Boot Discovery Service</description>
-	<properties>
-		<java.version>17</java.version>
-		<spring-cloud.version>2022.0.0-RC2</spring-cloud.version>
+	<properties> 
+		<java.version>1.8</java.version>
+		<spring-cloud.version>2021.0.5</spring-cloud.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -59,23 +59,5 @@
 			</plugin>
 		</plugins>
 	</build>
-	<repositories>
-		<repository>
-			<id>netflix-candidates</id>
-			<name>Netflix Candidates</name>
-			<url>https://artifactory-oss.prod.netflix.net/artifactory/maven-oss-candidates</url>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-		</repository>
-		<repository>
-			<id>spring-milestones</id>
-			<name>Spring Milestones</name>
-			<url>https://repo.spring.io/milestone</url>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-		</repository>
-	</repositories>
 
 </project>
