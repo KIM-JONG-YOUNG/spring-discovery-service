@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+  discovery-service:
+    image: openjdk:8
+    hostname: discovery-service
+    container_name: discovery-service
+    environment:
+      - TZ=Asia/Seoul 
+    ports:
+      - 8761:8761
+    volumes:
+      - ./src/main/resources/application.yml:/app/application.yml
+      - ./target/spring-discovery-service-0.0.1-SNAPSHOT.jar:/app/application.jar
+    command: java -jar -Dspring.config.location=/app/application.yml /app/application.jar
+    networks:
+      - backend
+
+networks:
+  backend:
+    driver: bridge
