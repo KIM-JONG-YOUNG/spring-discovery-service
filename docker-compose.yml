@@ -12,9 +12,7 @@ services:
     volumes:
       - ./src/main/resources:/app/resources
       - ./target:/app/target
-    command: java -jar \
-             -Dspring.config.location=/app/resources/application.yml \
-             /app/target/spring-discovery-service-0.0.1-SNAPSHOT.jar
+    command: java -jar -Dspring.config.location=/app/resources/application.yml /app/target/spring-discovery-service-0.0.1-SNAPSHOT.jar
     networks:
       - eureka_net
 
