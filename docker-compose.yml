@@ -11,10 +11,14 @@ services:
       - 8761:8761
     volumes:
       - ./src/main/resources:/app/resources
-      - ./target/spring-discovery-service-0.0.1-SNAPSHOT.jar:/app/application.jar
-    command: java -jar -Dspring.config.location=/app/resources/application.yml /app/application.jar
+      - ./target:/app/target
+    command: java -jar \
+             -Dspring.config.location=/app/resources/application.yml \
+             /app/target/spring-discovery-service-0.0.1-SNAPSHOT.jar
+    networks:
+      - eureka_net
 
 networks:
-  default:
-    name: discovery_net
+  eureka_net:
+    name: eureka_net
     external: true
